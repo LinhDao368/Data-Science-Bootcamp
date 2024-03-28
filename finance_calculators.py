@@ -1,5 +1,4 @@
-# T05 - Capstone Project - Finance Calculators
-
+# FINANCE CALCULATORS
 # This program ask for user input of the kind of interest they want to calculate and further neccesary details
 # and output the results of the interest, either for investment or homeloan
 
@@ -16,8 +15,7 @@ def input_float(prompt):
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
-# Ask for input of which calculator is needed (investment or bond) and lowercase input 
-
+# Ask for input of which calculator is needed and lowercase input 
 while True:
     investment_cal = input('''\nWe provide the following calculating services:\n
     Investment: \t to calculate the amount of interest you'll earn on your investment.
@@ -26,8 +24,7 @@ while True:
 
     investment_cal = investment_cal.lower()
 
-    # Ask for further details based on type of calculator (investment) and lowercase for interest types 
-    # Note the validity of input
+    # Ask for further details for investment calculator
     if investment_cal == "investment":
         print("\nThank you for choosing the investment calculator. Please provide the below information to proceed.")
         print("Note: Please only type numbers (and decimals where applicable) for deposit amount, interest rate and year.\n")
@@ -36,6 +33,7 @@ while True:
         investment_rate = input_float("Interest rate (%): ")
         invest_time = input_float("Years of investing: ")
         interest_type = input("\nPlease specify the type of interest you want by typing 'simple' or 'compound': ")
+        # Lower case input
         interest_type = interest_type.lower()
 
     # Display user's input and output the interest amount
@@ -53,12 +51,9 @@ while True:
 
         else:
             print("\nYour input is invalid. Please try again.")
-        
         break
 
-        # Note the validity of input
-        # Ask for further details based on type of calculator (bond)
-
+    # Ask for further details for bond calculator
     elif investment_cal == "bond":
         print("\nThank you for choosing the bond calculator. Please provide the below information to proceed.")
         print("Note: Please only type numbers (and decimals where applicable).\n")
